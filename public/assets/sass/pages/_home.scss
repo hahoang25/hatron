@@ -1,0 +1,99 @@
+.product-box{
+  @extend .box;
+}
+
+.categories-product{
+  height: 337px;
+  background: #fafafa;
+  border:1px solid $blue;
+  position: relative;
+  z-index: 10000;
+  margin-bottom: 20px;
+  .main-categories{
+    >li {
+      border-bottom: 1px dotted #d6d6d6;
+      border-left: 3px solid transparent;
+      &:last-child{
+        border-bottom: none;
+      }
+      >a{
+        font-size:15px;
+        padding: 10px 15px;
+        line-height: 20px;
+        display: block;
+        &:before{
+          content: "\f0da";
+          padding-right: 5px;
+          font-family:FontAwesome;
+        }
+      }
+      &:hover{
+        border-left-color: $blue;
+        .sub-categories{
+          width: 879px;
+          opacity: 1;
+        }
+      }
+      .sub-categories{
+        position: absolute;
+        top: -1px;
+        bottom: -1px;
+        left: 100%;
+        z-index: 10;
+        width: 0;
+        background: #fafafa;
+        overflow: hidden;
+        border:1px solid $blue;
+        opacity: 0;
+        -webkit-transition: width 0.5s, opacity 0.5s;
+        -moz-transition: width 0.5s, opacity 0.5s;
+        -ms-transition: width 0.5s, opacity 0.5s;
+        -o-transition: width 0.5s, opacity 0.5s;
+        transition: width 0.5s, opacity 0.5s;
+        .item-cate{
+          width: 879px;
+          padding: 10px;
+          overflow: hidden;
+        }
+        ul{
+          width: 210px;
+          float: left;
+          li{
+            padding: 2px 5px;
+            &:before{
+              content: "\f101";
+              font-family:FontAwesome;
+              padding-right: 10px;
+            }
+            a{
+              display: inline-block;
+              line-height: 18px;
+              &:hover{
+                color: #ff0000;
+                text-decoration: underline !important;
+              }
+            }
+            &.group-cate-name{
+              font-weight: bold;
+              color: #000000;
+              &:before{
+                content: "";
+                padding-right: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen {
+
+}
+
+#slider{
+  height: 337px;
+  overflow: hidden ;
+  margin-bottom: 20px;
+}
